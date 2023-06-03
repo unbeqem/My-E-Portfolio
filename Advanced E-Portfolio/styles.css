@@ -23,6 +23,8 @@ p {
 
 a {
     text-decoration: none;
+    color: white;
+    font-size: 22px;
 }
 
 button {
