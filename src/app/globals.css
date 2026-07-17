@@ -1,0 +1,110 @@
+@import "tailwindcss";
+
+@custom-variant dark (&:where([data-theme="dark"], [data-theme="dark"] *));
+
+:root {
+  --bg: #f6f4ef;
+  --bg-soft: #ffffff;
+  --bg-elevated: #ffffff;
+  --ink: #14161c;
+  --ink-soft: #55596b;
+  --ink-faint: #8b8f9e;
+  --line: rgba(20, 22, 28, 0.1);
+  --brand: #5ce1e6;
+  --brand-ink: #0a3c3e;
+  --accent-coral: #ff6b4a;
+  --accent-violet: #b98bff;
+}
+
+:root[data-theme="dark"] {
+  --bg: #0b0c10;
+  --bg-soft: #14161c;
+  --bg-elevated: #191b22;
+  --ink: #f4f6f5;
+  --ink-soft: #a7adba;
+  --ink-faint: #666c7c;
+  --line: rgba(244, 246, 245, 0.1);
+  --brand-ink: #eafeff;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --bg: #0b0c10;
+    --bg-soft: #14161c;
+    --bg-elevated: #191b22;
+    --ink: #f4f6f5;
+    --ink-soft: #a7adba;
+    --ink-faint: #666c7c;
+    --line: rgba(244, 246, 245, 0.1);
+    --brand-ink: #eafeff;
+  }
+}
+
+@theme inline {
+  --color-bg: var(--bg);
+  --color-bg-soft: var(--bg-soft);
+  --color-bg-elevated: var(--bg-elevated);
+  --color-ink: var(--ink);
+  --color-ink-soft: var(--ink-soft);
+  --color-ink-faint: var(--ink-faint);
+  --color-line: var(--line);
+  --color-brand: var(--brand);
+  --color-brand-ink: var(--brand-ink);
+  --color-accent-coral: var(--accent-coral);
+  --color-accent-violet: var(--accent-violet);
+  --font-display: var(--font-bricolage);
+  --font-body: var(--font-jakarta);
+  --font-mono: var(--font-jbmono);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  background: var(--bg);
+}
+
+body {
+  background: var(--bg);
+  color: var(--ink);
+  font-family: var(--font-body), ui-sans-serif, system-ui, sans-serif;
+  transition: background-color 500ms ease, color 500ms ease;
+  overflow-x: clip;
+}
+
+::selection {
+  background: var(--brand);
+  color: #0a3c3e;
+}
+
+.font-display {
+  font-family: var(--font-display), ui-sans-serif, system-ui, sans-serif;
+}
+
+.font-mono {
+  font-family: var(--font-mono), ui-monospace, monospace;
+}
+
+/* Custom cursor: only enabled on fine-pointer devices via JS toggling .has-custom-cursor */
+.has-custom-cursor,
+.has-custom-cursor * {
+  cursor: none !important;
+}
+
+:focus-visible {
+  outline: 2px solid var(--brand);
+  outline-offset: 3px;
+  border-radius: 2px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+    scroll-behavior: auto !important;
+  }
+}
