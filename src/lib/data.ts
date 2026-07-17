@@ -101,6 +101,10 @@ export const skills = [
   { name: "Next.js", detail: "Full-stack React" },
   { name: "Tailwind CSS", detail: "Utility styling" },
   { name: "Angular", detail: "Enterprise apps" },
+  { name: "C#", detail: "Backend logic" },
+  { name: ".NET", detail: "Backend framework" },
+  { name: "MSSQL", detail: "Relational DB" },
+  { name: "Sybase", detail: "Relational DB" },
 ];
 
 export const socials = {

@@ -40,7 +40,7 @@ export default function Hero() {
           transition={{ delay: 0.15, duration: 0.6 }}
           className="mb-6 font-mono text-sm uppercase tracking-[0.25em] text-ink-soft"
         >
-          Tristan Keick · Frontend Developer
+          Tristan Keick · Full-Stack Developer
         </motion.p>
 
         <h1 className="font-display text-[13vw] font-semibold leading-[0.92] tracking-tight sm:text-[9vw] lg:text-[6.4vw]">
@@ -80,8 +80,8 @@ export default function Hero() {
           transition={{ delay: 1.1, duration: 0.7, ease: [0.16, 1, 0.3, 1] }}
           className="mt-8 max-w-lg text-lg text-ink-soft sm:text-xl"
         >
-          Frontend-Entwickler mit einer Schwäche für kleine Details, sauberen
-          Code und Interfaces, die sich gut anfühlen &mdash; nicht nur gut aussehen.
+          Full-Stack-Entwickler mit einer Schwäche für kleine Details, sauberen
+          Code und Systeme, die von der Oberfläche bis zur Datenbank durchdacht sind.
         </motion.p>
 
         <motion.div

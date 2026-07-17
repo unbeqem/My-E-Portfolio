@@ -26,8 +26,8 @@ export default function About() {
             01 / Über mich
           </span>
           <h2 className="mt-5 font-display text-4xl font-semibold leading-tight sm:text-5xl">
-            Ich baue Dinge, die im Browser gut funktionieren &mdash;
-            <span className="text-ink-soft"> und die man gern benutzt.</span>
+            Ich baue Software, die durchdacht ist &mdash;
+            <span className="text-ink-soft"> von der Oberfläche bis zur Datenbank.</span>
           </h2>
         </motion.div>
 
@@ -39,13 +39,15 @@ export default function About() {
             variants={fadeUp}
             className="max-w-xl text-lg leading-relaxed text-ink-soft"
           >
-            Ich bin Frontend-Entwickler aus Deutschland mit einem Auge fürs
-            Detail: von der ersten Skizze bis zum letzten Pixel. Am liebsten
-            arbeite ich an Interfaces, die sich lebendig anfühlen &mdash;
-            mit durchdachten Übergängen, klarer Struktur und Code, der auch in
-            einem Jahr noch verständlich ist. Aktuell vertiefe ich mich
-            täglich in neue Tools und Patterns, um als Entwickler
-            weiterzukommen.
+            Ich bin Full-Stack-Entwickler aus Deutschland mit einem Auge fürs
+            Detail: von der ersten Skizze bis zur letzten Datenbankabfrage. Im
+            Frontend arbeite ich am liebsten an Interfaces, die sich lebendig
+            anfühlen &mdash; mit durchdachten Übergängen und klarer Struktur.
+            Im Backend bringe ich Erfahrung mit C# und .NET sowie relationalen
+            Datenbanken wie MSSQL und Sybase mit. Code soll dabei auch in
+            einem Jahr noch verständlich sein &mdash; egal auf welcher Seite
+            des Stacks. Aktuell vertiefe ich mich täglich in neue Tools und
+            Patterns, um auf beiden Seiten weiterzukommen.
           </motion.p>
 
           <div className="grid grid-cols-2 gap-3 sm:grid-cols-4">

@@ -24,9 +24,9 @@ const jbMono = JetBrains_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Tristan Keick — Frontend Developer",
+  title: "Tristan Keick — Full-Stack Developer",
   description:
-    "Portfolio von Tristan Keick, Frontend-Entwickler mit Fokus auf durchdachte, animierte User Experiences.",
+    "Portfolio von Tristan Keick, Full-Stack-Entwickler mit Fokus auf durchdachte User Experiences und robuste Backend-Systeme.",
   icons: {
     icon: "/favicon.ico",
   },
