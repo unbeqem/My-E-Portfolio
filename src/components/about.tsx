@@ -54,16 +54,21 @@ export default function About() {
           whileInView="show"
           viewport={{ once: true, amount: 0.4 }}
           variants={fadeUp}
+          className="flex h-full flex-col"
         >
-          <span className="font-mono text-sm uppercase tracking-[0.25em] text-brand">
-            01 / Über mich
-          </span>
-          <h2 className="mt-5 font-display text-4xl font-semibold leading-tight sm:text-5xl">
-            Ich baue Software, die durchdacht ist &mdash;
-            <span className="text-ink-soft"> von der Oberfläche bis zur Datenbank.</span>
-          </h2>
+          <div>
+            <span className="font-mono text-sm uppercase tracking-[0.25em] text-brand">
+              01 / Über mich
+            </span>
+            <h2 className="mt-5 font-display text-4xl font-semibold leading-tight sm:text-5xl">
+              Ich baue Software, die durchdacht ist &mdash;
+              <span className="text-ink-soft"> von der Oberfläche bis zur Datenbank.</span>
+            </h2>
+          </div>
 
-          <CodeCard />
+          <div className="flex flex-1 items-center justify-center py-10">
+            <CodeCard />
+          </div>
         </motion.div>
 
         <div className="flex flex-col gap-12">
