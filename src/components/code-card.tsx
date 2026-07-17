@@ -30,7 +30,7 @@ export default function CodeCard() {
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true, amount: 0.4 }}
       transition={{ duration: 0.7, delay: 0.15, ease: [0.16, 1, 0.3, 1] }}
-      className="mt-10 max-w-sm"
+      className="mx-auto mt-10 max-w-sm"
     >
       <motion.div
         animate={{ y: [0, -6, 0] }}
@@ -72,7 +72,7 @@ export default function CodeCard() {
           <motion.div variants={line} className="pl-4">
             <span className={prop}>stack</span>
             <span className={punct}>: [</span>
-            <span className={str}>&apos;React&apos;</span>
+            <span className={str}>&apos;Next.js&apos;</span>
             <span className={punct}>, </span>
             <span className={str}>&apos;.NET&apos;</span>
             <span className={punct}>, </span>
