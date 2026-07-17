@@ -2,6 +2,7 @@
 
 import { motion, type Variants } from "framer-motion";
 import { skillGroups, skills } from "@/lib/data";
+import CodeCard from "@/components/code-card";
 
 const fadeUp: Variants = {
   hidden: { opacity: 0, y: 32 },
@@ -61,6 +62,8 @@ export default function About() {
             Ich baue Software, die durchdacht ist &mdash;
             <span className="text-ink-soft"> von der Oberfläche bis zur Datenbank.</span>
           </h2>
+
+          <CodeCard />
         </motion.div>
 
         <div className="flex flex-col gap-12">
