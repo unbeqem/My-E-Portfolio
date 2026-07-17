@@ -92,20 +92,45 @@ export const projects: Project[] = [
   },
 ];
 
-export const skills = [
-  { name: "HTML", detail: "Semantic markup" },
-  { name: "CSS", detail: "Layout & motion" },
-  { name: "JavaScript", detail: "Core language" },
-  { name: "TypeScript", detail: "Typed at scale" },
-  { name: "React", detail: "Component systems" },
-  { name: "Next.js", detail: "Full-stack React" },
-  { name: "Tailwind CSS", detail: "Utility styling" },
-  { name: "Angular", detail: "Enterprise apps" },
-  { name: "C#", detail: "Backend logic" },
-  { name: ".NET", detail: "Backend framework" },
-  { name: "MSSQL", detail: "Relational DB" },
-  { name: "PostgreSQL", detail: "Relational DB" },
+export type SkillGroup = {
+  label: string;
+  accent: "brand" | "coral" | "violet";
+  items: string[];
+};
+
+export const skillGroups: SkillGroup[] = [
+  {
+    label: "Frontend",
+    accent: "brand",
+    items: [
+      "HTML",
+      "CSS",
+      "JavaScript",
+      "TypeScript",
+      "React",
+      "Next.js",
+      "Tailwind CSS",
+      "Angular",
+    ],
+  },
+  {
+    label: "Backend & Daten",
+    accent: "coral",
+    items: ["C#", ".NET", "MSSQL", "PostgreSQL", "Supabase"],
+  },
+  {
+    label: "Mobile",
+    accent: "violet",
+    items: ["Kotlin", "Android"],
+  },
+  {
+    label: "Plattformen & Tools",
+    accent: "brand",
+    items: ["Clerk", "Stripe", "Firebase", "Git"],
+  },
 ];
+
+export const skills = skillGroups.flatMap((group) => group.items);
 
 export const socials = {
   github: "https://github.com/unbeqem",

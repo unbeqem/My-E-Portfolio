@@ -1,7 +1,7 @@
 "use client";
 
 import { motion, type Variants } from "framer-motion";
-import { skills } from "@/lib/data";
+import { skillGroups, skills } from "@/lib/data";
 
 const fadeUp: Variants = {
   hidden: { opacity: 0, y: 32 },
@@ -12,9 +12,41 @@ const fadeUp: Variants = {
   }),
 };
 
+const groupContainer: Variants = {
+  hidden: {},
+  show: {
+    transition: { staggerChildren: 0.08 },
+  },
+};
+
+const chipPop: Variants = {
+  hidden: { opacity: 0, scale: 0.6, y: 10 },
+  show: {
+    opacity: 1,
+    scale: 1,
+    y: 0,
+    transition: { type: "spring", stiffness: 380, damping: 22 },
+  },
+};
+
+const dotBg: Record<string, string> = {
+  brand: "bg-brand",
+  coral: "bg-accent-coral",
+  violet: "bg-accent-violet",
+};
+
+const chipHover: Record<string, string> = {
+  brand:
+    "hover:border-brand hover:text-brand hover:shadow-[0_0_0_1px_var(--brand),0_10px_28px_-10px_var(--brand)]",
+  coral:
+    "hover:border-accent-coral hover:text-accent-coral hover:shadow-[0_0_0_1px_var(--accent-coral),0_10px_28px_-10px_var(--accent-coral)]",
+  violet:
+    "hover:border-accent-violet hover:text-accent-violet hover:shadow-[0_0_0_1px_var(--accent-violet),0_10px_28px_-10px_var(--accent-violet)]",
+};
+
 export default function About() {
   return (
-    <section id="about" className="relative px-6 py-28 sm:py-36">
+    <section id="about" className="relative overflow-hidden px-6 py-28 sm:py-36">
       <div className="mx-auto grid max-w-6xl gap-14 lg:grid-cols-[0.9fr_1.1fr]">
         <motion.div
           initial="hidden"
@@ -31,7 +63,7 @@ export default function About() {
           </h2>
         </motion.div>
 
-        <div className="flex flex-col gap-10">
+        <div className="flex flex-col gap-12">
           <motion.p
             initial="hidden"
             whileInView="show"
@@ -43,35 +75,71 @@ export default function About() {
             Detail: von der ersten Skizze bis zur letzten Datenbankabfrage. Im
             Frontend arbeite ich am liebsten an Interfaces, die sich lebendig
             anfühlen &mdash; mit durchdachten Übergängen und klarer Struktur.
-            Im Backend bringe ich Erfahrung mit C# und .NET sowie relationalen
-            Datenbanken wie MSSQL und PostgreSQL mit. Code soll dabei auch in
-            einem Jahr noch verständlich sein &mdash; egal auf welcher Seite
-            des Stacks. Aktuell vertiefe ich mich täglich in neue Tools und
-            Patterns, um auf beiden Seiten weiterzukommen.
+            Im Backend bringe ich Erfahrung mit C# und .NET, relationalen
+            Datenbanken wie MSSQL und PostgreSQL sowie Auth- und
+            Payment-Infrastruktur wie Clerk und Stripe mit. Auch mobil bin ich
+            unterwegs &mdash; mit nativer Android-Entwicklung in Kotlin. Code
+            soll dabei auch in einem Jahr noch verständlich sein, egal auf
+            welcher Seite des Stacks.
           </motion.p>
 
-          <div className="grid grid-cols-2 gap-3 sm:grid-cols-4">
-            {skills.map((skill, i) => (
+          <div className="flex flex-col gap-8">
+            {skillGroups.map((group, gi) => (
               <motion.div
-                key={skill.name}
-                custom={i}
+                key={group.label}
                 initial="hidden"
                 whileInView="show"
-                viewport={{ once: true, amount: 0.4 }}
-                variants={fadeUp}
-                className="group rounded-2xl border border-line bg-bg-soft p-4 transition-colors hover:border-brand"
+                viewport={{ once: true, amount: 0.3 }}
+                variants={groupContainer}
+                transition={{ delayChildren: gi * 0.05 }}
               >
-                <p className="font-display text-base font-semibold text-ink">
-                  {skill.name}
-                </p>
-                <p className="mt-1 font-mono text-[11px] uppercase tracking-wide text-ink-faint">
-                  {skill.detail}
-                </p>
+                <motion.div
+                  variants={fadeUp}
+                  className="mb-3 flex items-center gap-2"
+                >
+                  <span className={`h-1.5 w-1.5 rounded-full ${dotBg[group.accent]}`} />
+                  <span className="font-mono text-[11px] uppercase tracking-[0.2em] text-ink-faint">
+                    {group.label}
+                  </span>
+                </motion.div>
+                <div className="flex flex-wrap gap-2.5">
+                  {group.items.map((item) => (
+                    <motion.span
+                      key={item}
+                      variants={chipPop}
+                      whileHover={{ y: -3, rotate: -1, scale: 1.05 }}
+                      whileTap={{ scale: 0.95 }}
+                      className={`cursor-default rounded-full border border-line bg-bg-soft px-4 py-2 font-display text-sm font-medium text-ink transition-colors duration-200 ${chipHover[group.accent]}`}
+                    >
+                      {item}
+                    </motion.span>
+                  ))}
+                </div>
               </motion.div>
             ))}
           </div>
         </div>
       </div>
+
+      <motion.div
+        initial={{ opacity: 0 }}
+        whileInView={{ opacity: 1 }}
+        viewport={{ once: true, amount: 0.4 }}
+        transition={{ duration: 0.8 }}
+        className="relative mt-24 border-y border-line bg-bg-soft py-5 [mask-image:linear-gradient(90deg,transparent,black_10%,black_90%,transparent)]"
+      >
+        <div className="flex w-max animate-marquee gap-10">
+          {[...skills, ...skills].map((item, i) => (
+            <span
+              key={`${item}-${i}`}
+              className="flex items-center gap-10 font-mono text-sm uppercase tracking-[0.15em] text-ink-faint"
+            >
+              {item}
+              <span className="text-brand">•</span>
+            </span>
+          ))}
+        </div>
+      </motion.div>
     </section>
   );
 }
