@@ -126,6 +126,12 @@ body {
   border-radius: 2px;
 }
 
+/* Text inputs get their own animated underline focus state instead of the box outline above */
+input:focus-visible,
+textarea:focus-visible {
+  outline: none;
+}
+
 @media (prefers-reduced-motion: reduce) {
   *,
   *::before,

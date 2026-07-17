@@ -170,24 +170,30 @@ export default function Contact() {
                       <span className="font-mono text-xs uppercase tracking-wide text-ink-faint">
                         {field.label}
                       </span>
-                      <input
-                        required
-                        type={field.type}
-                        name={field.name}
-                        className="border-b border-line bg-transparent py-2 text-ink outline-none transition-colors focus:border-brand"
-                      />
+                      <div className="relative">
+                        <input
+                          required
+                          type={field.type}
+                          name={field.name}
+                          className="peer w-full border-b border-line bg-transparent py-2 text-ink outline-none transition-colors"
+                        />
+                        <span className="pointer-events-none absolute inset-x-0 bottom-0 h-[2px] origin-left scale-x-0 bg-brand transition-transform duration-300 ease-out peer-focus:scale-x-100" />
+                      </div>
                     </motion.label>
                   ))}
                   <motion.label variants={fieldItem} className="flex flex-col gap-2">
                     <span className="font-mono text-xs uppercase tracking-wide text-ink-faint">
                       Nachricht
                     </span>
-                    <textarea
-                      required
-                      name="message"
-                      rows={4}
-                      className="resize-none border-b border-line bg-transparent py-2 text-ink outline-none transition-colors focus:border-brand"
-                    />
+                    <div className="relative">
+                      <textarea
+                        required
+                        name="message"
+                        rows={4}
+                        className="peer w-full resize-none border-b border-line bg-transparent py-2 text-ink outline-none transition-colors"
+                      />
+                      <span className="pointer-events-none absolute inset-x-0 bottom-0 h-[2px] origin-left scale-x-0 bg-brand transition-transform duration-300 ease-out peer-focus:scale-x-100" />
+                    </div>
                   </motion.label>
 
                   <motion.button
