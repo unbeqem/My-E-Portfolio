@@ -13,10 +13,10 @@ const accentMap = {
   violet: "text-accent-violet",
 };
 
-const glowMap = {
-  brand: "from-brand/25",
-  coral: "from-accent-coral/25",
-  violet: "from-accent-violet/25",
+const glowColorMap = {
+  brand: "var(--brand)",
+  coral: "var(--accent-coral)",
+  violet: "var(--accent-violet)",
 };
 
 export default function ProjectCard({ project, i }: { project: Project; i: number }) {
@@ -45,8 +45,10 @@ export default function ProjectCard({ project, i }: { project: Project; i: numbe
     ry.set(0);
   };
 
-  const glowBackground = useTransform([glowX, glowY], ([gx, gy]: number[]) =>
-    `radial-gradient(420px circle at ${gx}% ${gy}%, var(--tw-gradient-stops))`
+  const glowBackground = useTransform(
+    [glowX, glowY],
+    ([gx, gy]: number[]) =>
+      `radial-gradient(420px circle at ${gx}% ${gy}%, color-mix(in oklab, ${glowColorMap[project.accent]} 25%, transparent), transparent 70%)`
   );
 
   return (
@@ -70,7 +72,7 @@ export default function ProjectCard({ project, i }: { project: Project; i: numbe
         >
           <motion.div
             style={{ background: glowBackground }}
-            className={`pointer-events-none absolute inset-0 z-10 opacity-0 transition-opacity duration-500 group-hover:opacity-100 ${glowMap[project.accent]} to-transparent`}
+            className="pointer-events-none absolute inset-0 z-10 opacity-0 transition-opacity duration-500 group-hover:opacity-100"
           />
 
           <div className="relative aspect-[16/10] w-full overflow-hidden">
