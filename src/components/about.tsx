@@ -44,7 +44,7 @@ export default function About() {
             Frontend arbeite ich am liebsten an Interfaces, die sich lebendig
             anfühlen &mdash; mit durchdachten Übergängen und klarer Struktur.
             Im Backend bringe ich Erfahrung mit C# und .NET sowie relationalen
-            Datenbanken wie MSSQL und Sybase mit. Code soll dabei auch in
+            Datenbanken wie MSSQL und PostgreSQL mit. Code soll dabei auch in
             einem Jahr noch verständlich sein &mdash; egal auf welcher Seite
             des Stacks. Aktuell vertiefe ich mich täglich in neue Tools und
             Patterns, um auf beiden Seiten weiterzukommen.

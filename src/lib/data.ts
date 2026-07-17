@@ -104,7 +104,7 @@ export const skills = [
   { name: "C#", detail: "Backend logic" },
   { name: ".NET", detail: "Backend framework" },
   { name: "MSSQL", detail: "Relational DB" },
-  { name: "Sybase", detail: "Relational DB" },
+  { name: "PostgreSQL", detail: "Relational DB" },
 ];
 
 export const socials = {
