@@ -30,7 +30,7 @@ export default function CodeCard() {
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true, amount: 0.4 }}
       transition={{ duration: 0.7, delay: 0.15, ease: [0.16, 1, 0.3, 1] }}
-      className="mx-auto w-full max-w-sm"
+      className="w-full max-w-sm"
     >
       <motion.div
         animate={{ y: [0, -6, 0] }}

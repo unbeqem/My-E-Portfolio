@@ -66,7 +66,7 @@ export default function About() {
             </h2>
           </div>
 
-          <div className="flex flex-1 items-center justify-center py-10">
+          <div className="flex flex-1 items-center justify-start py-10">
             <CodeCard />
           </div>
         </motion.div>
